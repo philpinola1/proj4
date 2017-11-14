@@ -2,8 +2,11 @@
 //#include "./includes/Smalltalk.h"
 #include "./includes/constants.h"
 
+
+
+
 	//use base class call to set Nationality (See constants for Nationality strings)
-	Smalltalk_American::Smalltalk_American(int iPerson) {
+	Smalltalk_American::Smalltalk_American(int iPerson){
 		this->iPerson = iPerson;
 		//HERE IS THE ISSUE EXPLAINED ON LINES 11-13 IN SMALLTALK.CPP
 	}
