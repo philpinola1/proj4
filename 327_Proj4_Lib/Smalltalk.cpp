@@ -3,8 +3,7 @@
 
 
 	//derived class will set Nationality, iPerson. iPerson is just a counter used to distinguish objects of the same type
-	Smalltalk::Smalltalk(std::string myNationality,int iPerson){
-		//this->pWatch = 0;
+	Smalltalk::Smalltalk(std::string myNationality,int iPerson):nationality(myNationality), iPerson(iPerson){
 		Smalltalk::populatePhrases();
 	}
 
@@ -16,7 +15,7 @@
 	//if pWatch !=0 then be sure to delete the pointer
 	Smalltalk::~Smalltalk(void) {
 		if (this->pWatch) {
-			pWatch = 0;
+			this->pWatch = 0;
 		}
 	}
 

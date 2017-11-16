@@ -4,8 +4,8 @@
 
 
 	//use base class call to set Nationality (See constants for Nationality strings)
-	Smalltalk_American::Smalltalk_American(int iPerson):nationality(AMERICAN){
-
+	Smalltalk_American::Smalltalk_American(int iPerson){
+		Smalltalk_American sa(AMERICAN, iPerson);
 	}
 		//this->iPerson = iPerson;
 		//HERE IS THE ISSUE EXPLAINED ON LINES 11-13 IN SMALLTALK.CPP
