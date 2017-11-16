@@ -1,19 +1,14 @@
 #include "./includes/Smalltalk_American.h"
-//#include "./includes/Smalltalk.h"
 #include "./includes/constants.h"
 
-
-	//use base class call to set Nationality (See constants for Nationality strings)
-	Smalltalk_American::Smalltalk_American(int iPerson):nationality(AMERICAN){
-
-	}
-		//this->iPerson = iPerson;
-		//HERE IS THE ISSUE EXPLAINED ON LINES 11-13 IN SMALLTALK.CPP
-	//}
-
-	Smalltalk::Smalltalk(std::string myNationality=AMERICAN,int iPerson):nationality(myNationality),iPerson(iPerson){
+	Smalltalk_American::Smalltalk_American(int iPerson):Smalltalk::Smalltalk(AMERICAN, iPerson){
 		this->pWatch = 0;
-		Smalltalk::populatePhrases();
+		//Smalltalk_American::populatePhrases();
+	}
+
+	Smalltalk_American::Smalltalk_American(std::string myNationality,int iPerson):Smalltalk::Smalltalk(myNationality, iPerson){
+		this->pWatch = 0;
+		//Smalltalk_American::populatePhrases();
 	}
 
 	Smalltalk_American::~Smalltalk_American(void){
@@ -28,4 +23,27 @@
 		mySmallTalk.push_back(AMERICAN_PHRASE_3);
 		mySmallTalk.push_back(AMERICAN_PHRASE_4);
 		mySmallTalk.push_back(AMERICAN_PHRASE_5);
+
+
+//		switch (iPerson%5) {
+//			case 1:
+//				mySmallTalk.push_back(AMERICAN_PHRASE_1);
+//				break;
+//
+//			case 2:
+//				mySmallTalk.push_back(AMERICAN_PHRASE_2);
+//				break;
+//
+//			case 3:
+//				mySmallTalk.push_back(AMERICAN_PHRASE_3);
+//				break;
+//
+//			case 4:
+//				mySmallTalk.push_back(AMERICAN_PHRASE_4);
+//				break;
+//
+//			case 0:
+//				mySmallTalk.push_back(AMERICAN_PHRASE_5);
+//				break;
+//		}
 	}
