@@ -17,35 +17,18 @@
 	}
 
 	//cycles through and returns phrases created in populatePhrases
-	//takes the form Nationality iPerson: phrase
+	//takes the form "Nationality iPerson: phrase"
 	//for instance the following string comes from an American instance, the 10th iPerson and it is printing AMERICAN_PHRASE_2
 	//AMERICAN 10:Why yes, I would like to supersize that
 	std::string Smalltalk::saySomething() {
 
-		//current phrase!!!! increment
-				switch (iPerson%5) {
-					case 1:
-						mySmallTalk.push_back(AMERICAN_PHRASE_1);
-						break;
-
-					case 2:
-						mySmallTalk.push_back(AMERICAN_PHRASE_2);
-						break;
-
-					case 3:
-						mySmallTalk.push_back(AMERICAN_PHRASE_3);
-						break;
-
-					case 4:
-						mySmallTalk.push_back(AMERICAN_PHRASE_4);
-						break;
-
-					case 0:
-						mySmallTalk.push_back(AMERICAN_PHRASE_5);
-						break;
-				}
-
-		return mySmallTalk.pop_back();
+		if ((unsigned)current_phrase < mySmallTalk.size()) {
+			return nationality + " " + std::to_string(iPerson) + ":" + mySmallTalk.at(current_phrase++);
+		}
+		else { 		//else if ((unsigned)current_phrase >= mySmallTalk.size())
+			this->current_phrase = 0;
+			return nationality + " " + std::to_string(iPerson) + ":" + mySmallTalk.at(mySmallTalk.size()-1);
+		}
 	}
 
 	//returns the time or I_DO_NOT_HAVE_A_WATCH string

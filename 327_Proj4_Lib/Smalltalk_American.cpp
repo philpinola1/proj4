@@ -23,27 +23,4 @@
 		mySmallTalk.push_back(AMERICAN_PHRASE_3);
 		mySmallTalk.push_back(AMERICAN_PHRASE_4);
 		mySmallTalk.push_back(AMERICAN_PHRASE_5);
-
-
-//		switch (iPerson%5) {
-//			case 1:
-//				mySmallTalk.push_back(AMERICAN_PHRASE_1);
-//				break;
-//
-//			case 2:
-//				mySmallTalk.push_back(AMERICAN_PHRASE_2);
-//				break;
-//
-//			case 3:
-//				mySmallTalk.push_back(AMERICAN_PHRASE_3);
-//				break;
-//
-//			case 4:
-//				mySmallTalk.push_back(AMERICAN_PHRASE_4);
-//				break;
-//
-//			case 0:
-//				mySmallTalk.push_back(AMERICAN_PHRASE_5);
-//				break;
-//		}
 	}
