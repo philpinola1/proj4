@@ -2,11 +2,11 @@
 #include "./includes/constants.h"
 #include "./includes/Watch.h"
 
-
 	//derived class will set Nationality, iPerson. iPerson is just a counter used to distinguish objects of the same type
-	Smalltalk::Smalltalk(std::string myNationality,int iPerson){
+	Smalltalk::Smalltalk(std::string myNationality,int iPerson):nationality(myNationality), iPerson(iPerson){
 		this->pWatch = 0;
 		Smalltalk::populatePhrases();
+		current_phrase++;
 	}
 
 	//if pWatch !=0 then be sure to delete the pointer
@@ -22,12 +22,19 @@
 	//AMERICAN 10:Why yes, I would like to supersize that
 	std::string Smalltalk::saySomething() {
 
+		//check the other elements in the vector to see if they are of the same nationality
+		//iterate for every match??????
+		//HE DID THIS IS CLASS ---- THERE IS A WAY TO DETERMINE THE NUMBER OF INSTANCES OF AN OBJECT?!?!?!
+
+		//look at mySmallTalk and see how many other people of the same nationality are pointing to it?
+
+
 		if ((unsigned)current_phrase < mySmallTalk.size()) {
-			return nationality + " " + std::to_string(iPerson) + ":" + mySmallTalk.at(current_phrase++);
+			return this->nationality + " " + std::to_string(this->iPerson) + ":" + mySmallTalk.at(current_phrase++);
 		}
 		else { 		//else if ((unsigned)current_phrase >= mySmallTalk.size())
 			this->current_phrase = 0;
-			return nationality + " " + std::to_string(iPerson) + ":" + mySmallTalk.at(mySmallTalk.size()-1);
+			return mySmallTalk.at(mySmallTalk.size()-1);
 		}
 	}
 
@@ -35,11 +42,10 @@
 	std::string Smalltalk::getTime() {
 
 		if (this->pWatch) {
-			return pWatch->getTime();
+			return this->nationality  + " " + std::to_string(this->iPerson) + ":" + pWatch->getTime();
 		}
-
 		else {
-			return I_DO_NOT_HAVE_A_WATCH;
+			return this->nationality  + " " + std::to_string(this->iPerson) + ":" + I_DO_NOT_HAVE_A_WATCH;
 		}
 	}
 

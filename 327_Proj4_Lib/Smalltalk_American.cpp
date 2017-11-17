@@ -3,12 +3,12 @@
 
 	Smalltalk_American::Smalltalk_American(int iPerson):Smalltalk::Smalltalk(AMERICAN, iPerson){
 		this->pWatch = 0;
-		//Smalltalk_American::populatePhrases();
+		Smalltalk_American::populatePhrases();
 	}
 
 	Smalltalk_American::Smalltalk_American(std::string myNationality,int iPerson):Smalltalk::Smalltalk(myNationality, iPerson){
 		this->pWatch = 0;
-		//Smalltalk_American::populatePhrases();
+		Smalltalk_American::populatePhrases();
 	}
 
 	Smalltalk_American::~Smalltalk_American(void){
